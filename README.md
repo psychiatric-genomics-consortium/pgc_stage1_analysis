@@ -139,7 +139,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
  * **In the first PCA run**, Find out which samples are removed with relatedness checking (1st/2nd col. in /pcaer_[data]/[data].mepr.famex file)
  * Map these onto the genetic relatedness file to see how related they are (/pcaer_[data]/[data].mepr.genome file)
  * Report the number of samples removed and list of individual IDs (if not too long) due to cryptic relatedness in QC report 
- * **TIP: Read the .famex and .genome file into [related_samples_filter.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/related_samples_filter.R) to get quick output of these results**
+ * **TIP: Read the .famex and .genome file into [related_samples_filter.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/related_samples_filter.R) to get quick output of these results**
  * Manually check first 10 PCs for multiple clusters or unusual clusters, particularly case/control biased clusters
  * Attach screenshots of relevant PCA plots (at minimum PCA1/PCA2 graph) to QC report
 
@@ -154,7 +154,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
  * Set cutoffs to filter out PCA outliers in PC axis. Some may require both low/high cutoffs to remove outliers, some require only one.
  * List number of samples removed at each cutoff in QC document
  * If splitting into mutliple ancestries, label samples with imputed continental ancestry
- * **TIP: Input cutoffs into a small file and run [PC_filter_casecon.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/PC_filter_casecon.R) to get list of samples filtered and improved graphs. Keep re-running to refine cutoffs quickly too!**
+ * **TIP: Input cutoffs into a small file and run [PC_filter_casecon.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/PC_filter_casecon.R) to get list of samples filtered and improved graphs. Keep re-running to refine cutoffs quickly too!**
 
 **_Filtering samples and re-running QC and PCA_**
  * Track or retain FID/IID of cryptic related samples and PCA outliers
@@ -193,7 +193,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
  * Create pca subdirectory (e.g. refpca0/) and soft-link to PLINK QC files AND reference files
  * Run pcaer command (NOTE: do not use --prefer-case as it may list excessive individuals in .famex file)
  * Run additional PCA projection in PLINK to project PCs for related samples based on unrelated set
- * **TIP: Running [family_based_pca.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/family_based_pca.R) with `--refdata TRUE` will run PCA projection for related samples and create a PDF with 2-dimensional PCA scatterplots** 
+ * **TIP: Running [family_based_pca.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/family_based_pca.R) with `--refdata TRUE` will run PCA projection for related samples and create a PDF with 2-dimensional PCA scatterplots** 
  * Manually check first 6 PCs for distinct or unusual clusters
  * Attach screenshots of relevant PCA plots (at minimum PCA1/PCA2 graph) to QC report
 
@@ -201,7 +201,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
  * Set cutoffs to filter out PCA outliers in PC axis. Some may require both low/high cutoffs to remove outliers, some require only one.
  * List number of samples removed at each cutoff in QC document
  * If splitting into mutliple ancestries, label samples with imputed continental ancestry
- * **TIP: Input cutoffs into a small file and run [PC_filter_related.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/PC_filter_related.R) to get list of samples filtered and improved graphs. Keep re-running to refine cutoffs quickly too!**
+ * **TIP: Input cutoffs into a small file and run [PC_filter_related.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/PC_filter_related.R) to get list of samples filtered and improved graphs. Keep re-running to refine cutoffs quickly too!**
 
 **_Confirming pedigrees using genotype data_**
  * Confirm parents/proband/sibling relationships using Identity-By-Descent (IBD) estimates from genotype data
@@ -228,7 +228,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
  * Create pca subdirectory (e.g. pca1/) and soft-link to PLINK QC files
  * Run pcaer command (NOTE: do not use --prefer-case as it may list excessive individuals in .famex file)
  * Run additional PCA projection in PLINK to project PCs for related samples based on unrelated set
- * **TIP: Running [family_based_pca.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/family_based_pca.R) will run PCA projection for related samples and create a PDF with 2-dimensional PCA scatterplots** 
+ * **TIP: Running [family_based_pca.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/family_based_pca.R) will run PCA projection for related samples and create a PDF with 2-dimensional PCA scatterplots** 
  * Manually check first 10 PCs for multiple clusters or unusual clusters, particularly case/control biased clusters
  * Attach screenshots of relevant PCA plots (at minimum PCA1/PCA2 graph) to QC report
 
@@ -236,14 +236,14 @@ You can derive counts from the phenotype files received, but do not proceed unti
  * Create pca subdirectory (e.g. refpca1/) and soft-link to PLINK QC files AND reference files
  * Run pcaer command (NOTE: do not use --prefer-case as it may list excessive individuals in .famex file)
  * Run additional PCA projection in PLINK to project PCs for related samples based on unrelated set
- * **TIP: Running [family_based_pca.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/family_based_pca.R) with `--refdata TRUE` will run PCA projection for related samples and create a PDF with 2-dimensional PCA scatterplots** 
+ * **TIP: Running [family_based_pca.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/family_based_pca.R) with `--refdata TRUE` will run PCA projection for related samples and create a PDF with 2-dimensional PCA scatterplots** 
  * Manually check first 10 PCs for multiple clusters or unusual clusters, particularly case/control biased clusters
  * Attach screenshots of relevant PCA plots (at minimum PCA1/PCA2 graph) to QC report
 
 **_Determine PCA outliers to filtered out_**
  * Set cutoffs to filter out PCA outliers in PC axis. Some may require both low/high cutoffs to remove outliers, some require only one.
  * List number of samples removed at each cutoff in QC document
- * **TIP: Input cutoffs into a small file and run [PC_filter_related.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src/PC_filter_related.R) to get list of samples filtered and improved graphs. Keep re-running to refine cutoffs quickly too!**
+ * **TIP: Input cutoffs into a small file and run [PC_filter_related.R](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/PC_filter_related.R) to get list of samples filtered and improved graphs. Keep re-running to refine cutoffs quickly too!**
 
 **_Filtering samples and re-running QC and PCA_**
  * Track or retain FID/IID of cryptic related samples and PCA outliers
