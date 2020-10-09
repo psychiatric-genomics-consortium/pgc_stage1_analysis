@@ -1,0 +1,36 @@
+Example order of operations for picopili:
+
+0. install/configure picopili, have plink data (including reported fam file w/ pheno)
+
+1. Evaluate ancestry (pca_rel.py)
+- script includes initial rough QC
+- pca is ancestry-aware (creates IMUS subset, runs PCA, projects)
+
+2. If needed, subset by ancestry group (manually), re-run PCA
+- could also PCA with 1KG/etc here to confirm groups if needed
+- choice of how to define ancestry subsets is entirely up to you
+
+3. Check relatedness/pedigree
+- if homogeneous ancestry: estimate relatedness with plink (manually)
+- if still ancestry structure: estimate relatedness with REAP (admix_rel.py)
+- check if relatedness matches reported pedigree structure (filter_ped.py)
+-- optional: reconstruct full pedigrees for verification (ped_confirm.py)
+
+4. If needed, fix fam file to reflect relatedness (manually)
+
+5. QC ancestry subset w/ correct pedigree (qc_rel.py)
+
+6. If needed, apply any further manual QC (e.g. batch effects)
+
+7. Impute using QCed genotype data
+
+8. As needed, do final prep for GWAS:
+- cross-cohort relatedness checks for meta-analysis projects
+- PCA on imputed data for use as GWAS covariates
+- any other checks of batch effects, tinkering with covariates, confirming phenotype definitions, etc
+
+9. Run GWAS with desired association model (gwas_rel.py)
+
+10. Use GWAS stats as desired (meta-analysis, etc outside of picopili)
+- options may depend on choice of analysis model
+- For some uses, may want/need to compute effective sample sizes for the family analysis model. I can provide some very rough scripts for this if you need, but they aren't in picopili currently.
