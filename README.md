@@ -83,13 +83,13 @@ Imputation
  * Read through the entire site before running Ricopili
  * Google docs of additional analyses are available in the HowTo section (left sidebar)
 
-[ext folder](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/ext)
+[ext folder](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/tree/main/ext)
  * External files
  * Ricopili_BioArxiv_2019.pdf
  * Sample Picopili pipeline workflow
  * Sample Ricopili pipeline workflow
 
-[src folder](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/src)
+[src folder](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/tree/main/src)
  * Source scripts
  * Portable R scripts to process Ricopili output
  * See README in folder for more details
