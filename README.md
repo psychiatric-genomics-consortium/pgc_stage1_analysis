@@ -6,7 +6,7 @@
 * [Stage 1 workflow requirements](#stage-1-workflow-requirements)
 * [Case-control workflow](#case-control-workflow)
 * [Family-based workflow](#family-based-workflow)
-* [Trio / family data considerations](#Trio-family-data-considerations)
+* [Trio and family data considerations](#trio-and-family-data-considerations)
 
 
 ## Stage 1 analysis overview
@@ -260,7 +260,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
 
 
 
-## Trio / family data considerations
+## Trio and family data considerations
 
 It is crucial that you know whether the dataset is unrelated case/conntrol or family-based, as QC will differ dramtically depending on study design.
 
