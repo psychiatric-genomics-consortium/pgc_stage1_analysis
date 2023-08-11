@@ -212,7 +212,7 @@ You can derive counts from the phenotype files received, but do not proceed unti
    * Likely parents that have not been marked as such (unmarked parents)
    * Show cryptic relatedness (crossFID)
  * The filtering process should retain as many individuals when flagging pedigree errors (e.g. only remove one sample from a pair with cryptic relatedness)
- * **TIP: Running [check_ped.sh](https://github.com/Nealelab/pgc_stage1_analysis/blob/master/nbaya/scripts/bash/check_ped.sh) for family-based data to comfirm relatedness will do this all for you**
+ * **TIP: Running [check_ped.sh](https://github.com/psychiatric-genomics-consortium/pgc_stage1_analysis/blob/main/src/check_ped.sh) for family-based data to confirm relatedness will do this all for you**
  * Filter out PCA outliers and related samples on the pre-QC PLINK files with updated FIDs created by Ricopili in the qc0/ subdirectory
  * **NOTE: You'll know you're working with the proper PLINK files when the .bed and .bim file are soft-linked, but not the .fam file (as FIDs were altered)**
  * **This set of samples will mark the beginning of preimp-QC/PCA iterations for this dataset**
